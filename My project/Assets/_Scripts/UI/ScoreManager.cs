@@ -6,6 +6,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI score;
+
     int scoreNum;
     // Start is called before the first frame update
     void Start()
