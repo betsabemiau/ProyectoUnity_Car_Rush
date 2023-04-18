@@ -14,4 +14,10 @@ public class Enemy : MonoBehaviour
     {
         transform.Translate(-transform.up * speed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerMovent player))
+            player.Die();
+    }
 }

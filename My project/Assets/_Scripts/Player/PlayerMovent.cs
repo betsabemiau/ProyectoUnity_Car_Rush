@@ -27,4 +27,9 @@ public class PlayerMovent : MonoBehaviour
         
         transform.position = Vector3.Lerp(transform.position, new Vector3(playerPos.x, -3.25f), Time.deltaTime * 10f);
     }
+
+    public void Die()
+    {
+        print("Ola");
+    }
 }
