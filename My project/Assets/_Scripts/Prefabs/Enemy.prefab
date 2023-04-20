@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7912733342173877784}
   - component: {fileID: 7912733342173877785}
   m_Layer: 0
-  m_Name: carro zombie
+  m_Name: Enemy Amarillo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
