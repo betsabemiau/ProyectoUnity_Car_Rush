@@ -10,6 +10,8 @@ public class PlayerMovent : MonoBehaviour
     [SerializeField] GameObject visuals;
     [SerializeField] GameObject particles;
     [SerializeField] Collider2D collider;
+    [SerializeField] AudioClip kaboomClip;
+    [SerializeField] AudioSource audioSource;
     
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,8 @@ public class PlayerMovent : MonoBehaviour
 
     public void Die()
     {
+        audioSource.clip = kaboomClip;
+        audioSource.Play();
         StartCoroutine(nameof(SlowDown));
     }
 
