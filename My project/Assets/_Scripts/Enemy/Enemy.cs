@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    readonly float speed = 5;
+    private float speed = 3;
+
+    public float Speed { get { speed *= 2; return speed; } private set => speed = value; }
+
     private void Start()
     {
         Destroy(gameObject, 5);
@@ -12,6 +15,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        speed = GlobalVariables.CarSpeed;
         transform.Translate(-transform.up * speed * Time.deltaTime);
     }
 

@@ -12,11 +12,15 @@ public class PlayerMovent : MonoBehaviour
     [SerializeField] Collider2D collider;
     [SerializeField] AudioClip kaboomClip;
     [SerializeField] AudioSource audioSource;
-    
+    [SerializeField] GameObject perdisteUI;
+    [SerializeField] ScoreManager scoreManager;
+
+    [SerializeField] Sprite defaultSprite;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        visuals.GetComponent<SpriteRenderer>().sprite = GlobalVariables.currentSprite ? GlobalVariables.currentSprite : defaultSprite;
     }
 
     // Update is called once per frame
@@ -38,6 +42,7 @@ public class PlayerMovent : MonoBehaviour
     {
         audioSource.clip = kaboomClip;
         audioSource.Play();
+        scoreManager.contadorActivo = false;
         StartCoroutine(nameof(SlowDown));
     }
 
@@ -57,6 +62,10 @@ public class PlayerMovent : MonoBehaviour
     IEnumerator Restart()
     {
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(0);
+        perdisteUI.SetActive(true);
+        // TODO Aparecer Ui de restart
+        //
+        // Esto Reinicia
+        //SceneManager.LoadScene(0);
     }
 }
