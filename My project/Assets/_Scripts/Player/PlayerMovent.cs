@@ -64,7 +64,6 @@ public class PlayerMovent : MonoBehaviour
         yield return new WaitForSeconds(2);
         perdisteUI.SetActive(true);
         // TODO Aparecer Ui de restart
-        //
         // Esto Reinicia
         //SceneManager.LoadScene(0);
     }

@@ -34,7 +34,7 @@ public class ScenarioSpeedManager : MonoBehaviour
     IEnumerator SmoothChange()
     {
         targetScenario = GlobalVariables.scenarioSpeed * multiplier;
-        targetCar = GlobalVariables.CarSpeed * multiplier;
+        targetCar = GlobalVariables.CarSpeed * (multiplier - .1f);
         
         yield return new WaitUntil(CanContinue);
     }
@@ -49,6 +49,9 @@ public class ScenarioSpeedManager : MonoBehaviour
         {
             GlobalVariables.scenarioSpeed = targetScenario;
             GlobalVariables.CarSpeed = targetCar;
+
+            multiplier = multiplier - (.1f * (GlobalVariables.phase * 1.5f));
+
             GlobalVariables.phase++;
             return true;
         }
